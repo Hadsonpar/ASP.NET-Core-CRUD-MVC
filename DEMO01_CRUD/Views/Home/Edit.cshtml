@@ -1,0 +1,64 @@
+﻿@model DEMO01_CRUD.Models.ClsUsuario
+
+@{
+    var title = "ACTUALIZAR USUARIO";
+    ViewData["Title"] = title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .input-validation-error {
+        border-color: red;
+    }
+</style>
+
+<div class="row justify-content-center">
+    <h4>@title</h4>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" disabled />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="usuario" class="control-label"></label>
+                <input asp-for="usuario" class="form-control" />
+                <span asp-validation-for="usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="contrasena" class="control-label"></label>
+                <input asp-for="contrasena" class="form-control" />
+                <span asp-validation-for="contrasena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="intentos" class="control-label"></label>
+                <input asp-for="intentos" class="form-control" />
+                <span asp-validation-for="intentos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nivelSeg" class="control-label"></label>
+                <input asp-for="nivelSeg" class="form-control" />
+                <span asp-validation-for="nivelSeg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fechaReg" class="control-label"></label>
+                <input asp-for="fechaReg" class="form-control" disabled />
+                <span asp-validation-for="fechaReg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" /> |
+                <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>

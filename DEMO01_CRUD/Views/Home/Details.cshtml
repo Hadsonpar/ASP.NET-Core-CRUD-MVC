@@ -1,0 +1,60 @@
+﻿@model DEMO01_CRUD.Models.ClsUsuario
+
+@{
+    var title = "DETALLE USUARIOS";
+    ViewData["Title"] = title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h3>@title</h3>*@
+<div class="row justify-content-center">
+    <h4>@title</h4>
+</div>
+<hr />
+<div>
+    @*<h4>ClsUsuario</h4>*@
+    @*<hr />*@
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.usuario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.contrasena)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.contrasena)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.intentos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.intentos)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nivelSeg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nivelSeg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fechaReg)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { @class = "btn btn-warning" }) |
+    @*<a asp-action="Index">Back to List</a>*@
+    <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
+</div>

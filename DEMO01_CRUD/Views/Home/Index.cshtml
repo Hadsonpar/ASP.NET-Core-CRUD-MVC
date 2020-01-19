@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DEMO01_CRUD.Models.ClsUsuario>
+
+@{
+    var title = "LISTAR USUARIO";
+    ViewData["Title"] = title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center">
+    <h4>@title</h4>
+</div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contrasena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.intentos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nivelSeg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaReg)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contrasena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.intentos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nivelSeg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaReg)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
